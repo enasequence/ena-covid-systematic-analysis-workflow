@@ -1,0 +1,2 @@
+run_accession	sample_accession	instrument_platform	instrument_model	fastq_aspera	fastq_bytes	fastq_ftp	fastq_galaxy	fastq_md5	first_created	first_public	country	collection_date	isolate	strain
+SRR17054808	SAMN23287060	OXFORD_NANOPORE	GridION	fasp.sra.ebi.ac.uk:/vol1/fastq/SRR170/008/SRR17054808/SRR17054808_1.fastq.gz	29863999	ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/008/SRR17054808/SRR17054808_1.fastq.gz	ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/008/SRR17054808/SRR17054808_1.fastq.gz	8e098cab9d0f97d3127de99d2daf13b3	2021-11-29	2021-11-29	USA: Colorado	2021-10-15	CO-CDPHE-2101997762

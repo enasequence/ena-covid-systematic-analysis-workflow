@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+export NXF_HOME="/hps/nobackup/cochrane/ena/users/sands/1k"
+######################################################################################
+##
+## FIRST SECTION:
+## Here we define the requirements we need to run our job: CPUs, RAM, run time, ...
+##
+######################################################################################
+
+#BSUB -J nanopore_1ktest_job # job name
+#BSUB -W 00:10      # wall-clock time (hrs:mins)
+#BSUB -n 1          # number of tasksi/CPUs in job
+#BSUB -q standard   # queue
+#BSUB -e error.%J   # error file name in which %J is replaced by the job ID
+#BSUB -o output.%J  # output file name in which %J is replaced by the job ID
+
+
+
+
+######################################################################################
+##
+## SECOND SECTION:
+## Here we define the modules we need to be loaded in order to run our job.
+## In this case, we need to load the R module, ... but first we make sure
+## we start off with a sane, blank environment so we purge all modules
+##
+######################################################################################
+
+module purge
+
+module load nextflow-20.07.1-gcc-9.3.0-mqfchke
+
+nextflow -C /homes/sands/nanopore/nextflow.config run /homes/sands/code/ENA_SARS_Cov2_nanopore/nanopore1k.nf -with-singularity /homes/sands/nanopore/ena-sars-cov2-nanopore.sif >> /hps/nobackup/cochrane/ena/users/sands/1k/1koutput -profile lsf -w /hps/nobackup/cochrane/ena/users/sands/1k/workdir
